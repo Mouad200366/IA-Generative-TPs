@@ -1,0 +1,56 @@
+# Environnements Python et données téléchargées
+.venv/
+venv/
+env/
+data/
+tmp/
+.tools/
+
+# Caches et sorties temporaires
+**/__pycache__/
+**/*pycache*/
+*.py[cod]
+.ipynb_checkpoints/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.cache/
+*.tmp
+*.temp
+*.bak
+*.swp
+*.swo
+*~
+*.log
+~$*
+Thumbs.db
+desktop.ini
+.DS_Store
+
+# Secrets et configuration personnelle
+.env
+.env.*
+*.pem
+*.key
+*.p12
+*.pfx
+credentials.json
+secrets.json
+client_secret*.json
+.aws/
+.ssh/
+.ipython/
+.jupyter/
+.vscode/
+.idea/
+
+# Documents pédagogiques originaux : ne pas publier sans autorisation
+*.pdf
+Activit*.ipynb
+supports/
+cours/
+
+# Rapports locaux pouvant contenir des chemins de machine
+verification_execution.json
+
+# Les trois poids entraînés du TP1 sont volontairement versionnés (*.pth).

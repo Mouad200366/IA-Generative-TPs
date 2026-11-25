@@ -1,0 +1,11 @@
+# Python 3.12 ; versions directes de l'environnement d'exécution vérifié.
+# Pour CUDA ou CPU, installer torch/torchvision avec l'index indiqué dans README.md.
+torch==2.9.1
+torchvision==0.24.1
+numpy==2.5.5
+scikit-learn==1.7.2
+matplotlib==3.10.9
+nbformat==5.11.1
+nbclient==0.10.4
+ipykernel==7.4.0
+jupyterlab==4.6.6
