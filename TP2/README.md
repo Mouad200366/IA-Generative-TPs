@@ -155,8 +155,9 @@ Le [travail d’Amine Zmarrou](https://github.com/AmineZmarrou/Activit-Pratique-
 a été consulté avec son accord déclaré par l’étudiant. Les cellules utiles sont
 identiques au support officiel ; le rendu les reprend directement du professeur.
 Aucun code spécifique, résultat ni poids d’Amine n’est republié. Son dépôt ne
-contient pas de licence explicite. Les modalités de collaboration et la publication
-des adaptations du cours restent soumises à la validation de l’étudiant avant le push.
+contient pas de licence explicite. Le 26 novembre 2026, Hachoum Mouad a explicitement
+confirmé que cette collaboration et la publication des adaptations du cours sont
+autorisées conformément aux règles du module, et a demandé la publication sur `main`.
 Voir [SOURCES.md](SOURCES.md) pour la comparaison détaillée.
 
 Intégration, explications, exécution et contrôles préparés pour **Hachoum Mouad**

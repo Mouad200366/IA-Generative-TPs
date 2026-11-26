@@ -72,13 +72,14 @@ explicite de republication de son code n’a donc pas pu être vérifiée dans c
 
 ## Validation avant publication
 
-Le support local ne fournit pas de règle explicite sur la republication d’extraits
-du cours ni sur les modalités de collaboration entre étudiants. La publication
-reste en attente de la confirmation de l’étudiant concernant ces règles et la
-republication des adaptations pédagogiques. Une consultation autorisée d’un travail
-ne sera pas présentée comme une autorisation vérifiée de republier son code.
-Cette validation concerne le rendu précis décrit ci-dessus ; aucun élément propre
-au camarade n’est destiné à être republié.
+Le 26 novembre 2026, Hachoum Mouad a explicitement confirmé que la publication des
+adaptations du support pédagogique et la collaboration décrite dans ce rendu sont
+autorisées conformément aux règles du module, puis a demandé la publication sur
+la branche `main` de son dépôt. Cette confirmation est déclarative : le support
+local ne contient pas lui-même de règle explicite sur ces points.
+
+Cette validation concerne le rendu précis décrit ci-dessus. Aucun élément propre
+au camarade n’est republié et aucune licence générale n’est attribuée à son dépôt.
 
 ## Documentation technique consultée
 

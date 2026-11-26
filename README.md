@@ -27,7 +27,7 @@ Les versions utilisées pour le TP1 sont indiquées dans
 | TP | Sujet | État | Accès |
 |---|---|---|---|
 | TP1 | Bases de PyTorch | Terminé, exécuté et vérifié | [Notebook](TP1-Bases-PyTorch/TP1_IA_Generative.ipynb) · [Documentation](TP1-Bases-PyTorch/README.md) |
-| TP2 | Modèles génératifs PyTorch : MNIST, AE et VAE | Terminé, exécuté et vérifié localement | [Notebook](TP2/TP2_Modeles_Generatifs.ipynb) · [Documentation](TP2/README.md) |
+| TP2 | Modèles génératifs PyTorch : MNIST, AE et VAE | Terminé, exécuté et vérifié | [Notebook](TP2/TP2_Modeles_Generatifs.ipynb) · [Documentation](TP2/README.md) |
 | TP3 | À définir selon les consignes | À venir | [Dossier TP3](TP3/README.md) |
 | TP4 | À définir selon les consignes | À venir | [Dossier TP4](TP4/README.md) |
 | TP5 | À définir selon les consignes | À venir | [Dossier TP5](TP5/README.md) |
@@ -136,7 +136,8 @@ dans la [documentation du TP2](TP2/README.md).
 Le code pédagogique est attribué au professeur. Le dépôt d’Amine Zmarrou a été
 consulté comme référence ; aucun résultat, poids ou code spécifique à son travail
 n’est republié. Les [sources et conditions de publication](TP2/SOURCES.md) détaillent
-la provenance et la validation de collaboration requise avant publication.
+la provenance et la confirmation des autorisations de publication et de collaboration
+fournie par l’étudiant le 26 novembre 2026.
 
 Pour reproduire le TP2, utiliser son environnement isolé :
 
