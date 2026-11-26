@@ -53,4 +53,7 @@ cours/
 # Rapports locaux pouvant contenir des chemins de machine
 verification_execution.json
 
+# Support original du TP2, conservé uniquement en local
+TP2/Modeles_generatifs_pytorch_avec_explications.ipynb
+
 # Les trois poids entraînés du TP1 sont volontairement versionnés (*.pth).

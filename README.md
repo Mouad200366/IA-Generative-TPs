@@ -12,7 +12,7 @@ modèles génératifs et multimodaux.
 
 ## Technologies utilisées
 
-- **Python 3.12** et **JupyterLab** pour les notebooks et les expériences.
+- **Python 3.12** pour le TP1 et **Python 3.11 avec UV** pour le TP2 ; notebooks Jupyter.
 - **PyTorch** et **torchvision** pour les modèles, l'entraînement et MNIST.
 - **CUDA** si un GPU compatible est disponible ; exécution sur CPU sinon.
 - **NumPy** et **scikit-learn** pour les données Iris, leur préparation et les métriques.
@@ -27,7 +27,7 @@ Les versions utilisées pour le TP1 sont indiquées dans
 | TP | Sujet | État | Accès |
 |---|---|---|---|
 | TP1 | Bases de PyTorch | Terminé, exécuté et vérifié | [Notebook](TP1-Bases-PyTorch/TP1_IA_Generative.ipynb) · [Documentation](TP1-Bases-PyTorch/README.md) |
-| TP2 | À définir selon les consignes | À venir | [Dossier TP2](TP2/README.md) |
+| TP2 | Modèles génératifs PyTorch : MNIST, AE et VAE | Terminé, exécuté et vérifié localement | [Notebook](TP2/TP2_Modeles_Generatifs.ipynb) · [Documentation](TP2/README.md) |
 | TP3 | À définir selon les consignes | À venir | [Dossier TP3](TP3/README.md) |
 | TP4 | À définir selon les consignes | À venir | [Dossier TP4](TP4/README.md) |
 | TP5 | À définir selon les consignes | À venir | [Dossier TP5](TP5/README.md) |
@@ -46,7 +46,13 @@ IA-Generative-TPs/
 │   ├── mnist_cnn_dropout.pth
 │   ├── requirements.txt
 │   └── README.md
-├── TP2/README.md
+├── TP2/
+│   ├── TP2_Modeles_Generatifs.ipynb
+│   ├── pyproject.toml / uv.lock / .python-version
+│   ├── resultats_tp2.json
+│   ├── poids/ / figures/
+│   ├── executer_notebook.py
+│   └── README.md / SOURCES.md
 ├── TP3/README.md
 ├── TP4/README.md
 └── TP5/README.md
@@ -102,7 +108,48 @@ néanmoins modifier les valeurs numériques. La comparaison MLP/CNN porte sur
 les protocoles imposés par le TP : cinq contre trois époques et des
 prétraitements différents. Elle n'isole donc pas l'effet de la seule architecture.
 
-## Installation et exécution
+## TP2 — Modèles génératifs avec PyTorch
+
+Le [notebook exécuté](TP2/TP2_Modeles_Generatifs.ipynb) compare la classification,
+la reconstruction et la génération sur MNIST. Il respecte les architectures du
+Pr. Mohamed Youssfi : classifieur 784 → 128 → 10 (3 époques), AE
+784 → 128 → 32 → 2 et décodeur symétrique (5 époques), puis VAE
+784 → 256 → 64, mu/logvar de dimension 2 et décodeur 2 → 64 → 256 → 784
+(20 époques, BCE+KL, beta=1). Tous utilisent Adam avec lr=0.001 et des lots de 128.
+Il inclut les reconstructions, les espaces latents, un prototype AE, 20 tirages VAE
+et une grille latente 15 × 15. Les GAN et la diffusion restent hors périmètre.
+
+| Expérience | Résultat sur les 10 000 images de test |
+|---|---|
+| Classifieur — 3 époques | Accuracy torcheval : **96.49 %** (9649/10 000) |
+| AE — 5 époques | MSE/pixel : **0.044107** |
+| VAE — 20 époques | BCE/image : **137.6209** ; KL/image : **6.4156** ; total/image : **144.0365** |
+| VAE — reconstruction à partir de mu | MSE/pixel : **0.037783** |
+
+Calculs réalisés sur **NVIDIA GeForce RTX 3060 Laptop GPU**, Python 3.11.9,
+torch 2.9.1+cu128 et torchvision 0.24.1+cu128.
+Les 16 cellules Python ont été exécutées depuis un noyau neuf,
+avec 9 graphiques intégrés. Les sauvegardes des trois modèles ont été vérifiées sur tout le test.
+Les unités des pertes AE et VAE diffèrent ; consulter les explications et limites
+dans la [documentation du TP2](TP2/README.md).
+
+Le code pédagogique est attribué au professeur. Le dépôt d’Amine Zmarrou a été
+consulté comme référence ; aucun résultat, poids ou code spécifique à son travail
+n’est republié. Les [sources et conditions de publication](TP2/SOURCES.md) détaillent
+la provenance et la validation de collaboration requise avant publication.
+
+Pour reproduire le TP2, utiliser son environnement isolé :
+
+```powershell
+cd TP2
+uv sync --locked
+uv run python executer_notebook.py
+```
+
+Les instructions ci-dessous concernent le **TP1** ; le TP2 possède ses propres
+dépendances et son propre environnement.
+
+## Installation et exécution du TP1
 
 Pour consulter le travail, ouvrir le notebook sur GitHub, dans JupyterLab ou
 dans VS Code : aucun entraînement supplémentaire n'est nécessaire.
