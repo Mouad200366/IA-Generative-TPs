@@ -133,11 +133,9 @@ avec 9 graphiques intégrés. Les sauvegardes des trois modèles ont été véri
 Les unités des pertes AE et VAE diffèrent ; consulter les explications et limites
 dans la [documentation du TP2](TP2/README.md).
 
-Le code pédagogique est attribué au professeur. Le dépôt d’Amine Zmarrou a été
-consulté comme référence ; aucun résultat, poids ou code spécifique à son travail
-n’est republié. Les [sources et conditions de publication](TP2/SOURCES.md) détaillent
-la provenance et la confirmation des autorisations de publication et de collaboration
-fournie par l’étudiant le 26 novembre 2026.
+Les architectures et le code pédagogique sont adaptés du support officiel du
+**Pr. Mohamed Youssfi**. Les résultats proviennent d’une exécution locale ; les
+[sources et références](TP2/SOURCES.md) précisent l’origine des éléments utilisés.
 
 Pour reproduire le TP2, utiliser son environnement isolé :
 

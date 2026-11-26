@@ -60,8 +60,6 @@ classe 1 est décodé depuis les codes moyens du train et ne constitue pas un ti
 probabiliste. Les générations et la grille permettent une inspection qualitative,
 sans prétendre mesurer statistiquement la qualité, la diversité ou l’originalité.
 
-
-
 ## Lecture des figures obtenues
 
 Les courbes diminuent sur les trois entraînements. Pour le VAE, le total passe de
@@ -84,7 +82,6 @@ de chiffres à boucles ; une même forme se répète dans plusieurs tuiles voisi
 Cela illustre un espace décodable continu, sans garantir la séparation des dix
 classes ni une diversité uniforme. Ces observations portent sur les figures de
 cette exécution et complètent les métriques, sans les remplacer.
-
 
 ## Installation isolée et exécution avec UV
 
@@ -133,7 +130,7 @@ version peut néanmoins produire des résultats différents.
 - [Poids du classifieur](poids/classifier_mnist.pth), [poids AE](poids/autoencoder_mnist.pth), [poids VAE](poids/vae_mnist.pth)
 - [Figures PNG](figures/) : exemples, reconstructions, nuages latents, prototype AE,
   20 générations VAE, grille 15 × 15 et courbes d’apprentissage
-- [Sources, comparaison et conditions de publication](SOURCES.md)
+- [Sources et références](SOURCES.md)
 
 Les poids sont des `state_dict` sur CPU. Pour recharger un modèle, exécuter sa
 définition de classe puis utiliser, par exemple :
@@ -144,22 +141,17 @@ ae.load_state_dict(torch.load('poids/autoencoder_mnist.pth', map_location=device
 ae.eval()
 ```
 
-## Sources et crédits
+## Sources et références
 
-Les architectures et le code pédagogique proviennent de **Pr. Mohamed Youssfi**,
-`Modeles_generatifs_pytorch_avec_explications.ipynb`, cellules 2 à 55 ; le fichier
-original n’est pas publié. La classe du classifieur, les classes AE/VAE, la perte
-VAE et la fonction de génération AE sont créditées dans les cellules concernées.
+Les architectures, hyperparamètres et fonctions pédagogiques sont adaptés du
+notebook officiel **Modeles_generatifs_pytorch_avec_explications.ipynb** du
+**Pr. Mohamed Youssfi**. Le support original reste local. Les éléments repris
+et leurs adaptations sont précisés dans [SOURCES.md](SOURCES.md).
 
-Le [travail d’Amine Zmarrou](https://github.com/AmineZmarrou/Activit-Pratique-N-2-Mod-les-g-n-ratifs/tree/715692e6188e7b21a820177dc0652185a3903218)
-a été consulté avec son accord déclaré par l’étudiant. Les cellules utiles sont
-identiques au support officiel ; le rendu les reprend directement du professeur.
-Aucun code spécifique, résultat ni poids d’Amine n’est republié. Son dépôt ne
-contient pas de licence explicite. Le 26 novembre 2026, Hachoum Mouad a explicitement
-confirmé que cette collaboration et la publication des adaptations du cours sont
-autorisées conformément aux règles du module, et a demandé la publication sur `main`.
-Voir [SOURCES.md](SOURCES.md) pour la comparaison détaillée.
+Les entraînements, résultats, figures et poids présentés ont été calculés
+localement. La rédaction, l’intégration et les contrôles ont été préparés pour
+**Hachoum Mouad** avec l’assistance de **Codex**.
 
-Intégration, explications, exécution et contrôles préparés pour **Hachoum Mouad**
-avec l’assistance de **Codex**. Les éléments pédagogiques externes ne sont pas
-présentés comme une réalisation personnelle originale.
+Références techniques : [PyTorch](https://pytorch.org/get-started/previous-versions/),
+[torchvision et MNIST](https://docs.pytorch.org/vision/stable/generated/torchvision.datasets.MNIST.html)
+et [UV](https://docs.astral.sh/uv/guides/integration/pytorch/).
