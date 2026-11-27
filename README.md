@@ -12,7 +12,7 @@ modèles génératifs et multimodaux.
 
 ## Technologies utilisées
 
-- **Python 3.12** pour le TP1 et **Python 3.11 avec UV** pour le TP2 ; notebooks Jupyter.
+- **Python 3.12** pour le TP1 et **Python 3.11 avec UV** pour les TP2 et TP3 ; notebooks Jupyter.
 - **PyTorch** et **torchvision** pour les modèles, l'entraînement et MNIST.
 - **CUDA** si un GPU compatible est disponible ; exécution sur CPU sinon.
 - **NumPy** et **scikit-learn** pour les données Iris, leur préparation et les métriques.
@@ -28,7 +28,7 @@ Les versions utilisées pour le TP1 sont indiquées dans
 |---|---|---|---|
 | TP1 | Bases de PyTorch | Terminé, exécuté et vérifié | [Notebook](TP1-Bases-PyTorch/TP1_IA_Generative.ipynb) · [Documentation](TP1-Bases-PyTorch/README.md) |
 | TP2 | Modèles génératifs PyTorch : MNIST, AE et VAE | Terminé, exécuté et vérifié | [Notebook](TP2/TP2_Modeles_Generatifs.ipynb) · [Documentation](TP2/README.md) |
-| TP3 | À définir selon les consignes | À venir | [Dossier TP3](TP3/README.md) |
+| TP3 | RAG multimodal et agentique | Terminé, exécuté et vérifié | [Notebook](TP3/TP3_RAG_Multimodal_Agentique.ipynb) · [Documentation](TP3/README.md) |
 | TP4 | À définir selon les consignes | À venir | [Dossier TP4](TP4/README.md) |
 | TP5 | À définir selon les consignes | À venir | [Dossier TP5](TP5/README.md) |
 
@@ -53,7 +53,12 @@ IA-Generative-TPs/
 │   ├── poids/ / figures/
 │   ├── executer_notebook.py
 │   └── README.md / SOURCES.md
-├── TP3/README.md
+├── TP3/
+│   ├── TP3_RAG_Multimodal_Agentique.ipynb
+│   ├── app.py / mcp_server.py / mcp_client.py
+│   ├── src/ / tests/ / docs/ / tools/
+│   ├── pyproject.toml / uv.lock / .python-version
+│   └── README.md / SOURCES.md / resultats_tp3.json
 ├── TP4/README.md
 └── TP5/README.md
 ```
@@ -144,6 +149,32 @@ cd TP2
 uv sync --locked
 uv run python executer_notebook.py
 ```
+
+<!-- TP3:START -->
+## TP3 — RAG multimodal et agentique
+
+Le [notebook exécuté](TP3/TP3_RAG_Multimodal_Agentique.ipynb) suit les sept étapes
+du support du Pr. Mohamed Youssfi : extraction PyMuPDF, embeddings OpenCLIP
+ViT-B-32/laion2b_s34b_b79k (512 dimensions, chunks 60 tokens/chevauchement 10),
+ChromaDB persistante, recherche multimodale, génération locale et agent LangGraph.
+Il comprend une interface Streamlit et un service de recherche MCP stdio.
+Le développement est terminé. L'édition publique conserve les résultats numériques
+et le code ; les figures de l'article et les passages reproduits sont retirés des
+sorties et rapports. Voir les [notes de publication](TP3/PUBLICATION.md).
+
+Le corpus fourni contient **11 pages**, indexées en **171 chunks et 2 figures complètes**.
+Les **15 scénarios agent** ont été exécutés avec Qwen3-VL 4B Instruct Q4_K_M local.
+La recherche retrouve une page/figure annotée dans **13/13 cas**,
+avec un test d’image identique inclus ; ce résultat ne mesure pas une généralisation.
+Les contrôles de motifs donnent **11/15** (référence initiale : **11/15**), sans constituer une accuracy sémantique.
+Le budget de trois appels est contrôlé ; Streamlit et MCP sont testés réellement.
+La relecture qualitative relève encore des omissions et des citations insuffisantes.
+Le sélecteur natif d’import de fichiers reste à vérifier manuellement dans le navigateur.
+
+Depuis `TP3` : `uv sync --locked`, puis `uv run streamlit run app.py` pour l’interface,
+ou `uv run python mcp_client.py` pour l’agent via MCP. Les sources, commandes et
+limites figurent dans la [documentation du TP3](TP3/README.md).
+<!-- TP3:END -->
 
 Les instructions ci-dessous concernent le **TP1** ; le TP2 possède ses propres
 dépendances et son propre environnement.

@@ -1,0 +1,48 @@
+[project]
+name = "tp3-rag-multimodal-agentique"
+version = "0.1.0"
+description = "RAG documentaire multimodal local, LangGraph, Streamlit et MCP"
+readme = "README.md"
+requires-python = ">=3.11,<3.12"
+dependencies = [
+  "torch==2.9.1",
+  "torchvision==0.24.1",
+  "pymupdf>=1.26,<1.28",
+  "open-clip-torch==3.3.0",
+  "chromadb>=1.5.9,<2",
+  "pillow>=12,<14",
+  "numpy>=2,<3",
+  "langchain==1.5.2",
+  "langgraph>=1,<2",
+  "langchain-ollama==1.2.0",
+  "streamlit==1.67.0",
+  "mcp>=1.20,<2",
+  "ipykernel>=6.29,<8",
+  "nbformat>=5.10,<6",
+  "nbclient>=0.10,<1",
+  "pytest>=8,<10",
+]
+
+[project.scripts]
+tp3 = "tp3rag.cli:main"
+
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "--strict-markers"
+markers = ["integration: utilise réellement OpenCLIP, Ollama ou MCP"]
+
+[tool.uv.sources]
+torch = [{ index = "pytorch-cu128", marker = "sys_platform == 'win32' or sys_platform == 'linux'" }]
+torchvision = [{ index = "pytorch-cu128", marker = "sys_platform == 'win32' or sys_platform == 'linux'" }]
+
+[[tool.uv.index]]
+name = "pytorch-cu128"
+url = "https://download.pytorch.org/whl/cu128"
+explicit = true

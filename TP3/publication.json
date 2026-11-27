@@ -1,0 +1,38 @@
+{
+  "edition": "publique",
+  "note": "Version publique dérivée de l’exécution locale : textes récupérés, réponses documentaires et figures reproduites retirés ; métriques, identifiants et pages conservés. Aucune expérience relancée.",
+  "notebook_sha256": "44f8db677d55fb16d8aa84b0f4a985693284c0eb9c824c967085727624eaa8c4",
+  "notebook_complet_local_sha256": "c67924f51efb11f1b4c58fa6225a3aecf8bf01714792e2bf3271190cddc81a9e",
+  "rapport_sha256": "86dd40ee602cd72f416923db2907b1cf6820ba684be3f2a9cb0f14128b174774",
+  "rapport_complet_local_sha256": "edffeeb0bc04cf10f2c781bc215eba476329c3189548119e85cbc1897cb23443",
+  "sorties_retirees": [
+    {
+      "cellule": 3,
+      "elements": "aperçu textuel et figures du PDF"
+    },
+    {
+      "cellule": 9,
+      "elements": "passages récupérés ; rangs et scores conservés"
+    },
+    {
+      "cellule": 11,
+      "elements": "réponse documentaire ou image reproduite"
+    },
+    {
+      "cellule": 13,
+      "elements": "réponse documentaire ou image reproduite"
+    },
+    {
+      "cellule": 19,
+      "elements": "réponse documentaire ou image reproduite"
+    }
+  ],
+  "rapports_traites": [
+    "resultats_tp3.json",
+    "evaluations/essai_consigne_seule.json",
+    "evaluations/essai_recherche_systematique.json",
+    "evaluations/essai_relecture_initiale.json",
+    "evaluations/reference_initiale/resultats_tp3.json"
+  ],
+  "metriques_et_provenance_preservees": true
+}

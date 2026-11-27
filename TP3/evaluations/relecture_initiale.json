@@ -1,0 +1,54 @@
+{
+  "nature": "Relecture qualitative assistée par Codex des quatre cas signalés ; distincte des contrôles lexicaux et sans score de vérité.",
+  "reference": "reference_initiale/resultats_tp3.json",
+  "cas": [
+    {
+      "id": "contribution",
+      "motifs_reussis": false,
+      "couverture": "partielle",
+      "observation": "La suppression de la récurrence est expliquée, mais pas celle des convolutions. Des résultats BLEU hors du cœur de la question allongent la réponse.",
+      "appui_citations": "partiel",
+      "references_concernees": [
+        "S9d923868c72b",
+        "S09d3008ca459"
+      ],
+      "justification": "S9d923868c72b établit le remplacement de la récurrence et la parallélisation. Le passage S09d3008ca459 attribué à la parallélisation parle surtout d'un modèle entièrement fondé sur l'auto-attention."
+    },
+    {
+      "id": "position",
+      "motifs_reussis": false,
+      "couverture": "partielle",
+      "observation": "La famille sinusoïdale et les longueurs d'onde sont décrites, mais l'explication explicite des sinus et cosinus manque.",
+      "appui_citations": "partiel",
+      "references_concernees": [
+        "Sa173c04ceb86",
+        "Sf91aca2d95e4",
+        "S9d923868c72b"
+      ],
+      "justification": "Les deux premiers passages appuient des éléments du mécanisme. S9d923868c72b décrit l'architecture générale et ne justifie pas à lui seul l'effet attribué à l'encodage positionnel."
+    },
+    {
+      "id": "mask",
+      "motifs_reussis": false,
+      "couverture": "conceptuellement_correcte",
+      "observation": "L'interdiction d'accéder au futur et la génération séquentielle sont expliquées. L'absence du mot autorégressif fait échouer le contrôle lexical sans rendre cette explication conceptuellement fausse.",
+      "appui_citations": "insuffisant",
+      "references_concernees": [
+        "S8f90fcd4a858"
+      ],
+      "justification": "Le seul passage cité décrit une sous-couche multi-têtes puis commence une sous-couche suivante ; il ne décrit pas le masquage causal. Une référence existante ne suffit donc pas."
+    },
+    {
+      "id": "base",
+      "motifs_reussis": false,
+      "couverture": "partielle",
+      "observation": "La réponse omet d_ff. Elle donne le nombre de têtes avec une référence qui n'en contient pas la valeur.",
+      "appui_citations": "partiel",
+      "references_concernees": [
+        "Scbecc5720dcc",
+        "S8c6a47bf8fff"
+      ],
+      "justification": "Scbecc5720dcc contient d_model et les six couches du décodeur ; S8c6a47bf8fff décrit le caractère autorégressif et la structure encodeur-décodeur, pas huit têtes."
+    }
+  ]
+}

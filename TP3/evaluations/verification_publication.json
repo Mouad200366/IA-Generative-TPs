@@ -1,0 +1,16 @@
+{
+  "date": "2026-11-27",
+  "statut_extraits_figures": "reproductions_exclues_version_publique",
+  "version_arxiv_consultee": "https://arxiv.org/abs/1706.03762v1",
+  "licence_liee": "https://arxiv.org/licenses/nonexclusive-distrib/1.0/license.html",
+  "notice_reutilisation": "https://info.arxiv.org/help/license/reuse.html",
+  "constat": "La licence non exclusive accorde des droits à arXiv et ne donne pas directement aux tiers une permission de republication. L'attribution ne remplace pas l'autorisation applicable.",
+  "portee": "La licence de la page arXiv consultée ne suffit pas à établir les droits de republication du PDF fourni, de ses figures ou de l'ensemble des passages récupérés.",
+  "action_avant_publication": "Retraits appliqués au notebook et aux rapports actuels et anciens ; copie complète conservée localement.",
+  "pdf_original": "exclu_de_git",
+  "support_professeur_original": "exclu_de_git",
+  "caches_modeles_bases_extractions": "exclus_de_git",
+  "commit": "non_effectue",
+  "push": "non_effectue",
+  "edition_publique": "Code, explications originales, diagrammes originaux, métriques et provenance sans les figures ni les passages reproduits."
+}

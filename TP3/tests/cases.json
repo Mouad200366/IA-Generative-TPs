@@ -1,0 +1,21 @@
+{
+  "document_sha256": "3c5f5a2cb399bc8fdff13f5d6da8987e185e27695307360de52bc4ea3c8e5af3",
+  "annotation": "Pages PDF du fichier fourni (11 pages), inspectées directement. Les motifs de réponse sont des contrôles de présence, pas une notation sémantique complète.",
+  "cases": [
+    {"id":"contribution","question":"Quelle est la contribution principale du Transformer dans cet article ?","query":"Transformer architecture solely attention without recurrence convolution","pages":[1,2],"type":"texte","patterns":["attention","récurr|recurr","convolution"]},
+    {"id":"scaled_attention","question":"Explique Scaled Dot-Product Attention et pourquoi diviser les scores par la racine carrée de d_k.","query":"scaled dot product attention divide square root key dimension small gradients softmax","pages":[4],"type":"texte","patterns":["racine|sqrt|√","gradient|softmax"]},
+    {"id":"multi_head","question":"Pourquoi utiliser plusieurs têtes d’attention et des projections différentes ?","query":"multi head attention different learned linear projections representation subspaces parallel","pages":[4,5],"type":"texte","patterns":["project|projet","parall|sous.espace"]},
+    {"id":"position","question":"Comment fonctionne l’encodage positionnel sinusoïdal ?","query":"positional encoding sine cosine different frequencies position dimension","pages":[5,6],"type":"texte","patterns":["sin","cos"]},
+    {"id":"mask","question":"Pourquoi l’auto-attention du décodeur est-elle masquée ?","query":"decoder self attention masking prevent subsequent positions autoregressive prediction","pages":[3,5],"type":"texte","patterns":["futur|ultérieur|suivant","auto.?rég|auto.?reg"]},
+    {"id":"figure1","question":"Retrouve la figure 1 et explique les différences entre encodeur et décodeur.","query":"Transformer model architecture encoder decoder diagram","pages":[3],"type":"image","figure":1,"patterns":["encodeur","décodeur"]},
+    {"id":"figure2","question":"Retrouve la figure 2 et explique les deux mécanismes d’attention représentés.","query":"Scaled Dot Product Attention Multi Head Attention two diagrams","pages":[4],"type":"image","figure":2,"patterns":["softmax","tête|head"]},
+    {"id":"image_image","question":"Retrouve la figure correspondant à cette image.","query":null,"pages":[3],"type":"image","image_figure":1,"identite":true,"patterns":["encodeur|encoder|figure"]},
+    {"id":"image_texte","question":"À partir de cette image, retrouve les passages expliquant cette architecture.","query":null,"pages":[2,3],"type":"texte","image_figure":1,"patterns":["encodeur","décodeur"]},
+    {"id":"hybride","question":"Utilise la question et l’image pour expliquer la structure encodeur-décodeur.","query":"encoder decoder architecture attention residual connections","pages":[2,3],"type":"tous","image_figure":1,"patterns":["encodeur","décodeur"]},
+    {"id":"comparaison","question":"Compare l’attention multi-têtes et l’encodage positionnel. Effectue une recherche séparée pour chaque notion avant la synthèse.","query":"multi head attention positional encoding sequence order representation subspaces","pages":[4,5,6],"type":"texte","patterns":["tête|head","position"]},
+    {"id":"base","question":"Pour Transformer Base, donne le nombre de couches encodeur/décodeur, d_model, d_ff et le nombre de têtes.","query":"base model six encoder decoder layers d_model 512 d_ff 2048 eight attention heads","pages":[2,3,5],"type":"texte","patterns":["6|six","512","2048|2 048","8|huit"]},
+    {"id":"bleu","question":"Quels scores BLEU de Transformer Big sont rapportés pour anglais-allemand et anglais-français ? Respecte les chiffres du PDF fourni.","query":"Transformer big BLEU WMT 2014 English German French translation results","pages":[1,8],"type":"texte","patterns":["28[.,]4","41[.,]0"]},
+    {"id":"absent","question":"D’après ce document, quelle accuracy GPT-4 obtient-il sur MMLU ?","query":"GPT-4 MMLU benchmark accuracy","pages":[],"type":"texte","absent":true,"patterns":["absen|ne .{0,80}pas|aucun|pas .{0,60}mention|ne permet"]},
+    {"id":"salutation","question":"Bonjour !","query":null,"pages":[],"type":"tous","salutation":true,"patterns":["bonjour|salut|bonsoir"]}
+  ]
+}

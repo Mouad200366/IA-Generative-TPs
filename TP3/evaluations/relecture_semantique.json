@@ -1,0 +1,215 @@
+{
+  "date": "2026-11-27",
+  "methode": "Relecture qualitative assistée par Codex des questions, réponses et contenus des références effectivement citées ; les images proviennent du corpus déjà inspecté visuellement. Aucune note de vérité automatisée n'est calculée.",
+  "limite": "Cette relecture n'est pas une validation humaine indépendante. Une référence connue ne prouve pas qu'elle justifie toutes les affirmations. Les constats ci-dessous ne doivent pas être transformés en accuracy sémantique.",
+  "reference_initiale": "reference_initiale/resultats_tp3.json",
+  "rapport_final_sha256": "86dd40ee602cd72f416923db2907b1cf6820ba684be3f2a9cb0f14128b174774",
+  "criteres_lexicaux": "Expressions régulières inchangées, vérifiées à l'identique avec la copie conservée dans l'archive initiale.",
+  "bilan": {
+    "motifs_avant": 11,
+    "motifs_apres": 11,
+    "nombre_scenarios": 15,
+    "gain_lexical": [
+      "position"
+    ],
+    "regression_lexicale": [
+      "image_texte"
+    ],
+    "interpretation_regression": "Le cas image_texte emploie encodage/décodage au lieu des mots encodeur/décodeur attendus. Cela ne suffit pas à conclure à une régression conceptuelle ; son appui documentaire reste néanmoins partiel.",
+    "omissions_persistantes": "La contribution ne mentionne toujours pas les convolutions ; Base ne restitue toujours pas d_ff et s'abstient désormais aussi sur les têtes. Le masquage causal est expliqué sans le terme autorégressif.",
+    "conclusion": "Les instructions et les recherches complémentaires sont améliorées et réellement exécutées, mais l'amélioration globale de la fidélité scientifique n'est pas établie. Plusieurs preuves citées restent insuffisantes. Aucun taux de réussite sémantique n'est revendiqué."
+  },
+  "cas": [
+    {
+      "id": "contribution",
+      "couverture": "partielle",
+      "appui_citations": "partiel",
+      "references_examinees": [
+        "S9d923868c72b",
+        "Sf9d3a24cf1da"
+      ],
+      "observation": "Le remplacement de la récurrence, la parallélisation et le gain BLEU sont appuyés en partie. Les convolutions restent omises. Le passage S9d923868c72b ne décrit pas les projections multi-têtes ; le détail ajouté sur celles-ci n'est pas justifié par cette référence. Le résultat BLEU est étayé mais secondaire pour la question.",
+      "motifs_avant": false,
+      "motifs_apres": false,
+      "nombre_appels": 2
+    },
+    {
+      "id": "position",
+      "couverture": "amelioree",
+      "appui_citations": "partiel",
+      "references_examinees": [
+        "Sa173c04ceb86"
+      ],
+      "observation": "Les sinus et cosinus et leurs formules sont maintenant explicites. Le seul fragment cité contient le cosinus et les longueurs d'onde, mais pas la formule complète du sinus ; le mécanisme est cohérent avec le document sans que cette citation unique prouve toute la réponse.",
+      "motifs_avant": false,
+      "motifs_apres": true,
+      "nombre_appels": 2
+    },
+    {
+      "id": "mask",
+      "couverture": "conceptuellement_correcte",
+      "appui_citations": "insuffisant",
+      "references_examinees": [
+        "S80f25263ac74"
+      ],
+      "observation": "La causalité et l'interdiction de regarder en avant sont expliquées. Les motifs lexicaux ne reconnaissent pas cette formulation et le mot autorégressif manque. Le passage cité parle de l'attention entre encodeur et décodeur, pas du masquage de l'auto-attention ; la citation ne justifie donc pas l'explication.",
+      "motifs_avant": false,
+      "motifs_apres": false,
+      "nombre_appels": 2
+    },
+    {
+      "id": "base",
+      "couverture": "incomplete",
+      "appui_citations": "partiel",
+      "references_examinees": [
+        "S8caa5b6fc521",
+        "Scbecc5720dcc"
+      ],
+      "observation": "d_model est appuyé par Scbecc5720dcc. La référence S8caa5b6fc521 associée aux six couches traite d'entraînement et ne justifie pas ce nombre. d_ff et le nombre de têtes ne sont pas restitués ; la réponse les présente comme manquants dans les preuves disponibles, sans les inventer. Cette abstention ne résout pas la question.",
+      "motifs_avant": false,
+      "motifs_apres": false,
+      "nombre_appels": 2
+    },
+    {
+      "id": "scaled_attention",
+      "couverture": "globalement_correcte",
+      "appui_citations": "partiel",
+      "references_examinees": [
+        "Sc747457a2089"
+      ],
+      "observation": "La division par la racine et le problème de petits gradients sont expliqués. Le fragment cité établit les grandes valeurs du produit scalaire et les faibles gradients, mais sa fin est coupée avant la définition complète du facteur de normalisation.",
+      "motifs_avant": true,
+      "motifs_apres": true,
+      "nombre_appels": 2
+    },
+    {
+      "id": "multi_head",
+      "couverture": "globalement_correcte",
+      "appui_citations": "etabli_pour_le_point_principal",
+      "references_examinees": [
+        "S88ef22416b05"
+      ],
+      "observation": "Les sous-espaces de représentation, les positions et la limitation liée à la moyenne d'une seule tête sont présents dans le passage cité. La réponse reste concise ; les détails des projections apprises ne sont pas développés.",
+      "motifs_avant": true,
+      "motifs_apres": true,
+      "nombre_appels": 2
+    },
+    {
+      "id": "figure1",
+      "couverture": "coherente_avec_la_figure",
+      "appui_citations": "visuel",
+      "references_examinees": [
+        "S6a514ee68766"
+      ],
+      "observation": "La figure réellement récupérée montre les blocs encodeur et décodeur, l'attention masquée et l'attention vers l'encodeur. La provenance correspond à la figure 1, page PDF 3.",
+      "motifs_avant": true,
+      "motifs_apres": true,
+      "nombre_appels": 2
+    },
+    {
+      "id": "figure2",
+      "couverture": "globalement_correcte",
+      "appui_citations": "visuel_partiel",
+      "references_examinees": [
+        "Sd6b9e7d7b4e2"
+      ],
+      "observation": "Les blocs de multiplication, mise à l'échelle, softmax, concaténation et projections sont cohérents avec la figure 2 récupérée. L'explication précise du facteur racine de d_k gagnerait à citer aussi le passage textuel contenant la formule.",
+      "motifs_avant": true,
+      "motifs_apres": true,
+      "nombre_appels": 2
+    },
+    {
+      "id": "image_image",
+      "couverture": "test_de_fonctionnement_reussi",
+      "appui_citations": "visuel",
+      "references_examinees": [
+        "S6a514ee68766"
+      ],
+      "observation": "L'image de requête est une copie d'une figure indexée et la figure 1 est retrouvée. Ce cas vérifie l'identité et le fonctionnement de la recherche, pas sa généralisation.",
+      "motifs_avant": true,
+      "motifs_apres": true,
+      "nombre_appels": 2
+    },
+    {
+      "id": "image_texte",
+      "couverture": "conceptuellement_coherente_mais_partiellement_etayee",
+      "appui_citations": "partiel",
+      "references_examinees": [
+        "Sf75668fddd39"
+      ],
+      "observation": "Les termes encodage/décodage expliquent l'échec du motif encodeur/décodeur sans prouver une erreur conceptuelle. La citation établit le remplacement des couches récurrentes par l'attention, mais ne suffit pas à justifier tous les détails ajoutés sur les connexions, la normalisation et les embeddings positionnels.",
+      "motifs_avant": true,
+      "motifs_apres": false,
+      "nombre_appels": 2
+    },
+    {
+      "id": "hybride",
+      "couverture": "conceptuellement_coherente_mais_partiellement_etayee",
+      "appui_citations": "insuffisant_pour_les_details",
+      "references_examinees": [
+        "Sf75668fddd39"
+      ],
+      "observation": "La description encodeur-décodeur est cohérente avec l'image de requête. Le seul fragment cité est une conclusion générale ; il ne prouve pas à lui seul les blocs Nx, Add & Norm et le masquage mentionnés. L'image de l'utilisateur ne remplace pas une source du PDF.",
+      "motifs_avant": true,
+      "motifs_apres": true,
+      "nombre_appels": 2
+    },
+    {
+      "id": "comparaison",
+      "couverture": "globalement_correcte",
+      "appui_citations": "partiel",
+      "references_examinees": [
+        "S2ddc2cfb4eb2",
+        "S8f90fcd4a858",
+        "S9c43139e458b",
+        "Sa173c04ceb86",
+        "Sf351b20a0dff"
+      ],
+      "observation": "La différence entre attention contextuelle et information de position est correctement formulée. Les références sont groupées en fin de réponse sans rattachement précis aux affirmations ; plusieurs fragments portent sur le coût ou des variantes et ne démontrent pas directement toute la synthèse.",
+      "motifs_avant": true,
+      "motifs_apres": true,
+      "nombre_appels": 3
+    },
+    {
+      "id": "bleu",
+      "couverture": "correcte_pour_le_pdf_fourni",
+      "appui_citations": "etabli",
+      "references_examinees": [
+        "S5cbf7f297030",
+        "Sf9d3a24cf1da"
+      ],
+      "observation": "Les deux valeurs sont présentes dans les fragments cités et correspondent au PDF fourni identifié par SHA-256, sans substitution par les chiffres d'une autre révision.",
+      "motifs_avant": true,
+      "motifs_apres": true,
+      "nombre_appels": 2
+    },
+    {
+      "id": "absent",
+      "couverture": "abstention_appropriee_avec_reserve",
+      "appui_citations": "sans_objet",
+      "references_examinees": [],
+      "observation": "Le modèle ne fournit pas de score GPT-4/MMLU inventé. Dire que tout le document ne contient aucune information est néanmoins plus fort que ce que prouvent les seuls résultats récupérés ; une formulation limitée aux preuves disponibles serait préférable.",
+      "motifs_avant": true,
+      "motifs_apres": true,
+      "nombre_appels": 2
+    },
+    {
+      "id": "salutation",
+      "couverture": "appropriee",
+      "appui_citations": "sans_objet",
+      "references_examinees": [],
+      "observation": "La salutation reçoit une réponse sans recherche documentaire ; aucun appel d'outil ni résultat scientifique n'est inventé.",
+      "motifs_avant": true,
+      "motifs_apres": true,
+      "nombre_appels": 0
+    }
+  ],
+  "mcp": {
+    "appui_citations": "visuel",
+    "references_examinees": [
+      "Sd6b9e7d7b4e2"
+    ],
+    "observation": "L'agent via MCP retrouve la véritable figure 2 et décrit les blocs principaux de ses deux mécanismes. Le transport et la provenance visuelle sont vérifiés ; cela ne constitue pas une garantie de vérité sur toute question MCP."
+  },
+  "rapport_complet_local_sha256": "edffeeb0bc04cf10f2c781bc215eba476329c3189548119e85cbc1897cb23443"
+}

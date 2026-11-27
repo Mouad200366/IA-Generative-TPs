@@ -1,0 +1,12 @@
+.venv/
+.cache/
+data/
+supports/
+verification_execution.json
+PROGRESS.md
+# Préparation de l'archive complète, conservée en local uniquement
+tools/prepare_review.py
+*.log
+__pycache__/
+.pytest_cache/
+*.egg-info/
