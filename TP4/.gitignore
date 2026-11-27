@@ -1,0 +1,10 @@
+.venv/
+.cache/
+data/
+supports/
+__pycache__/
+.pytest_cache/
+*.log
+verification_execution.json
+PROGRESS.md
+README_principal_proposition.md

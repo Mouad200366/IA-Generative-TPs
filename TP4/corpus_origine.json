@@ -1,0 +1,11 @@
+{
+  "origine": "Textes originaux rédigés et assemblés pour ce TP pour Hachoum Mouad avec assistance de Codex. Aucun extrait externe.",
+  "graine_assemblage": 42,
+  "gpt_caracteres": 16197,
+  "bert_phrases": 446,
+  "limites": "Domaines restreints ; récit et phrases semi-synthétiques avec patrons récurrents. Les modèles ne prouvent aucune compréhension générale.",
+  "sha256": {
+    "corpus.txt": "b08b4884d6768a685bcbe69776eb1c107662be634ccc52ef0449bfb571a1ccc1",
+    "corpus_bert.txt": "5f81b9e1d250d7de3cef1bd17d76d28d9a21febd8a033ef6d10d72ef242c1073"
+  }
+}

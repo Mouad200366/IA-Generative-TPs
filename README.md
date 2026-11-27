@@ -12,7 +12,7 @@ modèles génératifs et multimodaux.
 
 ## Technologies utilisées
 
-- **Python 3.12** pour le TP1 et **Python 3.11 avec UV** pour les TP2 et TP3 ; notebooks Jupyter.
+- **Python 3.12** pour le TP1 et **Python 3.11 avec UV** pour les TP2, TP3 et TP4 ; notebooks Jupyter.
 - **PyTorch** et **torchvision** pour les modèles, l'entraînement et MNIST.
 - **CUDA** si un GPU compatible est disponible ; exécution sur CPU sinon.
 - **NumPy** et **scikit-learn** pour les données Iris, leur préparation et les métriques.
@@ -29,7 +29,7 @@ Les versions utilisées pour le TP1 sont indiquées dans
 | TP1 | Bases de PyTorch | Terminé, exécuté et vérifié | [Notebook](TP1-Bases-PyTorch/TP1_IA_Generative.ipynb) · [Documentation](TP1-Bases-PyTorch/README.md) |
 | TP2 | Modèles génératifs PyTorch : MNIST, AE et VAE | Terminé, exécuté et vérifié | [Notebook](TP2/TP2_Modeles_Generatifs.ipynb) · [Documentation](TP2/README.md) |
 | TP3 | RAG multimodal et agentique | Terminé, exécuté et vérifié | [Notebook](TP3/TP3_RAG_Multimodal_Agentique.ipynb) · [Documentation](TP3/README.md) |
-| TP4 | À définir selon les consignes | À venir | [Dossier TP4](TP4/README.md) |
+| TP4 | Architecture Transformer : RNN, LSTM, GPT et BERT | Terminé, exécuté et vérifié | [Notebook](TP4/TP4_Architecture_Transformer.ipynb) · [Documentation](TP4/README.md) |
 | TP5 | À définir selon les consignes | À venir | [Dossier TP5](TP5/README.md) |
 
 ## Organisation du dépôt
@@ -59,7 +59,13 @@ IA-Generative-TPs/
 │   ├── src/ / tests/ / docs/ / tools/
 │   ├── pyproject.toml / uv.lock / .python-version
 │   └── README.md / SOURCES.md / resultats_tp3.json
-├── TP4/README.md
+├── TP4/
+│   ├── TP4_Architecture_Transformer.ipynb
+│   ├── modeles.py / donnees.py / entrainement.py / experiences.py
+│   ├── corpus.txt / corpus_bert.txt
+│   ├── poids/ / figures/ / tests/
+│   ├── pyproject.toml / uv.lock / .python-version
+│   └── README.md / SOURCES.md / resultats_tp4.json
 └── TP5/README.md
 ```
 
@@ -175,6 +181,41 @@ Depuis `TP3` : `uv sync --locked`, puis `uv run streamlit run app.py` pour l’i
 ou `uv run python mcp_client.py` pour l’agent via MCP. Les sources, commandes et
 limites figurent dans la [documentation du TP3](TP3/README.md).
 <!-- TP3:END -->
+
+## TP4 — Architecture Transformer : RNN, LSTM, GPT et BERT
+
+Le [notebook exécuté](TP4/TP4_Architecture_Transformer.ipynb) suit les exemples et
+les trois exercices du Pr. Mohamed Youssfi. Il compare RNN, LSTM et Transformer
+sur une sinusoïde, présente GPT-2 et BERT multilingue en inférence, puis entraîne
+un Transformer énergétique, un mini-GPT et un mini-BERT depuis zéro.
+
+| Modèle | Résultat définitif |
+|---|---|
+| RNN sinus | MSE test : **2,763 × 10⁻⁵** |
+| LSTM sinus | MSE test : **2,502 × 10⁻⁶** |
+| Transformer sinus | MSE test : **5,518 × 10⁻⁶** |
+| EnergyTransformer | MAE test : **0,339984 kW** ; RMSE : **0,487630 kW** |
+| Mini-GPT | Entropie croisée de validation : **1,147713 par caractère** |
+| Mini-BERT | Exactitude MLM sur les positions sélectionnées : **54,17 %** |
+
+Les trois modèles sinus utilisent les mêmes 40 cibles de test. Sur les 4 932 cibles
+énergétiques, le Transformer améliore la persistance et la référence journalière
+en MAE et RMSE. GPT-2 génère 50 nouveaux tokens ; BERT propose « capitale » en tête
+pour les deux phrases étudiées. Les six sauvegardes et rechargements sont vérifiés.
+Le notebook comprend 8 cellules Python exécutées sans erreur, 8 graphiques et les
+11 réponses de réflexion ; les **13 tests automatisés** réussissent, dont les
+contrôles de causalité et de padding.
+
+Les corpus originaux restent petits et présentent des patrons récurrents ; les
+générations peuvent être incorrectes. La validation sert au choix des modèles de
+langage et ne constitue pas un test indépendant. Les données énergétiques concernent
+un seul foyer ; la fenêtre de 168 heures reste une piste non expérimentée.
+La [documentation du TP4](TP4/README.md) et les [sources](TP4/SOURCES.md) décrivent
+les protocoles, les limites et les attributions.
+
+Depuis `TP4`, utiliser `uv sync --locked`, puis `uv run python preparer_ressources.py`
+et `uv run python executer_notebook.py` pour reproduire les expériences. Le notebook,
+les graphiques, les petits poids et les résultats sont déjà disponibles pour consultation.
 
 Les instructions ci-dessous concernent le **TP1** ; le TP2 possède ses propres
 dépendances et son propre environnement.
